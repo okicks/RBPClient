@@ -1,0 +1,3 @@
+Run and open    -   ng s -o
+Create components   -   ng g c components/*NAME* --skipTests
+Create services -   ng g s services/*NAME* --skipTests

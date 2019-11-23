@@ -15,16 +15,26 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
+import { MainComponent } from './components/main/main.component';
+import { LiquorComponent } from './components/liquor/liquor.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { MainService } from './services/main.service';
 
 const routes = [
   {path: '**', component: AgeVerifyComponent},
+  {path: 'home', component: MainComponent},
+  {path: 'liquors', component: LiquorComponent},
+  {path: 'recipes', component: RecipeComponent},
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AgeVerifyComponent
+    AgeVerifyComponent,
+    MainComponent,
+    LiquorComponent,
+    RecipeComponent
   ],
   
   imports: [
@@ -39,7 +49,7 @@ const routes = [
     ReactiveFormsModule
   ],
 
-  providers: [],
+  providers: [MainService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
