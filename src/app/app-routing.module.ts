@@ -8,8 +8,8 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
 
 const routes: Routes = [
-  {path: 'liquor/:id', component: LiquorDetailsComponent},
-  {path: 'recipe/:id', component: RecipeDetailsComponent},
+  {path: 'liquor/:Id', component: LiquorDetailsComponent},
+  {path: 'recipe/:Id', component: RecipeDetailsComponent},
   {path: 'home', component: MainComponent},
   {path: 'liquors', component: LiquorComponent},
   {path: 'recipes', component: RecipeComponent},
