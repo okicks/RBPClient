@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Liquor } from 'src/app/models/Liquor';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-liquor',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LiquorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  goToDetailPage(clickedLiquor: Liquor) {
+    this.router.navigate(['liquor', clickedLiquor.Id]);
+  }
 }

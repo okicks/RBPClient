@@ -19,13 +19,9 @@ import { MainComponent } from './components/main/main.component';
 import { LiquorComponent } from './components/liquor/liquor.component';
 import { RecipeComponent } from './components/recipe/recipe.component';
 import { MainService } from './services/main.service';
-
-const routes = [
-  {path: '**', component: AgeVerifyComponent},
-  {path: 'home', component: MainComponent},
-  {path: 'liquors', component: LiquorComponent},
-  {path: 'recipes', component: RecipeComponent},
-];
+import { AppRoutingModule } from './app-routing.module';
+import { LiquorDetailsComponent } from './components/liquor/liquor-details/liquor-details.component';
+import { RecipeDetailsComponent } from './components/recipe/recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
@@ -34,19 +30,22 @@ const routes = [
     AgeVerifyComponent,
     MainComponent,
     LiquorComponent,
-    RecipeComponent
+    RecipeComponent,
+    LiquorDetailsComponent,
+    RecipeDetailsComponent
   ],
   
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule,
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
 
   providers: [MainService],
