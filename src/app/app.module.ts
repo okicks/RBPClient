@@ -22,6 +22,9 @@ import { MainService } from './services/main.service';
 import { AppRoutingModule } from './app-routing.module';
 import { LiquorDetailsComponent } from './components/liquor/liquor-details/liquor-details.component';
 import { RecipeDetailsComponent } from './components/recipe/recipe-details/recipe-details.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
     LiquorComponent,
     RecipeComponent,
     LiquorDetailsComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   
   imports: [
@@ -48,7 +53,10 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
     AppRoutingModule
   ],
 
-  providers: [MainService],
+  providers: [
+    MainService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
