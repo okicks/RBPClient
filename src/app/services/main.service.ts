@@ -8,5 +8,11 @@ const Api = 'https://localhost:44310';
 })
 export class MainService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  /*
+    get*NAME*() {
+      return this.http.get(`${Api}/*LOCATION*`);
+    }
+  */
 }
