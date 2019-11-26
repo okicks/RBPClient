@@ -14,6 +14,5 @@ export class MainService {
     get*NAME*() {
       return this.http.get(`${Api}/*LOCATION*`);
     }
-    
   */
 }
