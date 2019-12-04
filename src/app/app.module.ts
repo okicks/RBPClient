@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes = [
   {path: '**', component: AgeVerifyComponent},
@@ -36,7 +37,8 @@ const routes = [
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
 
   providers: [],
