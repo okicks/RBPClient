@@ -50,7 +50,7 @@ import { RegisterComponent } from './components/register/register.component';
     MatInputModule,
     MatTableModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
 
