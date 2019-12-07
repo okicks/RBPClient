@@ -3,6 +3,6 @@ export interface Recipe {
     Name: string;
     Description: string;
     //IsStarred: boolean;
-    RecipeRating: Array<RecipeRating>;
+    //RecipeRating: Array<RecipeRating>;
     AverageRating: number;
 }

@@ -17,7 +17,7 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) { }
 
   register(regUserData: RegisterUser) {
-    return this.http.post(`${Api}/API/Account/Register`, regUserData); //caps?
+    return this.http.post(`${Api}/API/Account/Register`, regUserData);
   }
   
   login(loginInfo) {
