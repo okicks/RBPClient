@@ -11,7 +11,7 @@ import {
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
@@ -50,6 +50,7 @@ import { RegisterComponent } from './components/register/register.component';
     MatInputModule,
     MatTableModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     AppRoutingModule
   ],
 

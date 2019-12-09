@@ -1,0 +1,8 @@
+body {
+    align-content: center;
+}
+
+.RegisterPage {
+    /*display: flex;*/
+    align-items: center;
+}
