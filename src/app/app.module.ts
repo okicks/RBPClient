@@ -11,36 +11,53 @@ import {
 } from '@angular/material';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
-import { RatingService } from './services/rating.service';
-
-const routes = [
-  {path: '**', component: AgeVerifyComponent},
-];
+import { MainComponent } from './components/main/main.component';
+import { LiquorComponent } from './components/liquor/liquor.component';
+import { RecipeComponent } from './components/recipe/recipe.component';
+import { MainService } from './services/main.service';
+import { AppRoutingModule } from './app-routing.module';
+import { LiquorDetailsComponent } from './components/liquor/liquor-details/liquor-details.component';
+import { RecipeDetailsComponent } from './components/recipe/recipe-details/recipe-details.component';
+import { AuthService } from './services/auth.service';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AgeVerifyComponent
+    AgeVerifyComponent,
+    MainComponent,
+    LiquorComponent,
+    RecipeComponent,
+    LiquorDetailsComponent,
+    RecipeDetailsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
+    RouterModule,
     HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    AppRoutingModule
   ],
 
-  providers: [RatingService],
+  providers: [
+    MainService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
