@@ -9,21 +9,32 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { MainService } from './services/main.service';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'liquor/:Id', component: LiquorDetailsComponent },
-  { path: 'recipe/:Id', component: RecipeDetailsComponent },
-  { path: 'home', component: MainComponent },
-  { path: 'liquors', component: LiquorComponent },
-  { path: 'recipes', component: RecipeComponent },
+  {
+    path: 'whiskey', canActivate: [AuthGuard], children: [
+        { path: 'liquor/:Id', component: LiquorDetailsComponent },
+        { path: 'recipe/:Id', component: RecipeDetailsComponent },
+        { path: 'home', component: MainComponent },
+        { path: 'liquors', component: LiquorComponent },
+        { path: 'recipes', component: RecipeComponent },
+      ]
+    },
   { path: '**', component: AgeVerifyComponent }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), 
     HttpClientModule],
+  providers: [
+      MainService,
+      AuthGuard
+    ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
