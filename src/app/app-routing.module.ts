@@ -11,6 +11,8 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MainService } from './services/main.service';
+import { RecipeService } from 'src/app/services/recipe.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -31,10 +33,15 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes), 
     HttpClientModule],
+
   providers: [
+      AuthService,
       MainService,
+      RecipeService,
       AuthGuard
     ],
+
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
