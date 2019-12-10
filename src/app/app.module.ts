@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
+import { RatingService } from './services/rating.service';
 
 const routes = [
   {path: '**', component: AgeVerifyComponent},
@@ -39,7 +40,7 @@ const routes = [
     ReactiveFormsModule
   ],
 
-  providers: [],
+  providers: [RatingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
