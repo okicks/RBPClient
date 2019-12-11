@@ -15,10 +15,10 @@ export class RecipeDetailsComponent implements OnInit {
   dataSource: MatTableDataSource<Recipe>;
   recipe: Recipe[];
 
-  constructor(private mainService: MainService) { }
+  constructor(private recipeService: RecipeService) { }
 
   ngOnInit() {
-    this.mainService.getRecipes().subscribe (data => this.recipe = data['results']);
+    this.recipeService.getRecipes().subscribe (data => this.recipe = data['results']);
     this.dataSource = new MatTableDataSource<Recipe>(this.recipe);
   }
 

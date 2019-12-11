@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Recipe } from 'src/app/models/Recipe'
 
 const Api = 'https://localhost:44310';
 
@@ -18,6 +19,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.http.get(`${Api}/Recipe/AllRecipes`, { headers: this.getHeaders() });
+  }
+
+  getNote(id) {
+    return this.http.get(`${Api}/recipe/${id}`);
   }
 
   private getHeaders() {
