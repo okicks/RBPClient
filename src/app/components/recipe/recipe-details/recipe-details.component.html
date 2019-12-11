@@ -1,0 +1,29 @@
+<p>Recipe Detail</p>
+<hr />
+
+<div>
+    <mat-table #table [dataSource] = "dataSource">
+        <mat-header-row *matHeaderRowDef = "columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
+
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let recipe;">{{recipe.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef = "description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let recipe">{{recipe.description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef = "isStarred">
+            <mat-header-cell *matHeaderCellDef>Favorite?</mat-header-cell>
+            <mat-cell *matCellDef="let recipe">{{recipe.isStarred}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef = "recipeRating">
+            <mat-header-cell *matHeaderCellDef>Recipe Rating</mat-header-cell>
+            <mat-cell *matCellDef="let recipe">{{recipe.recipeRating}}</mat-cell>
+        </ng-container>
+    </mat-table>
+</div>

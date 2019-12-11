@@ -1,0 +1,13 @@
+.flex-filler {
+    flex: 1 1 auto;
+}
+
+.title {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+.nav-btn {
+    margin-right: 1em;
+    border-radius: 1em;   
+    font-family: 'Roboto Condensed', sans-serif;
+}

@@ -1,0 +1,6 @@
+Install Angular     -   npm install
+Install Material    -   npm install --save @angular/material @angular/cdk
+Run and open    -   ng s -o
+Create components   -   ng g c components/*NAME* --skipTests
+Create services -   ng g s services/*NAME* --skipTests
+Create router module    -   ng generate module *NAME* --flat --module=app
