@@ -16,11 +16,10 @@ export class MainService {
     }
   */
 
-  getRecipes() {
-    return this.http.get(`${Api}/Recipe/AllRecipes`, { headers: this.getHeaders() });
-  }
 
+  /*
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
+  */
 }
