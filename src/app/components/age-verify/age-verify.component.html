@@ -1,1 +1,32 @@
-<p>age-verify works!</p>
+<h2>Please enter your birthday</h2>
+
+<br />
+
+<h3>{{output}}</h3>
+
+<div id="date" class="div">
+    <select [(ngModel)]="selMonth">
+        <option *ngFor="let o of optMonth">
+            {{o.name}}
+        </option>
+    </select>
+
+    <select [(ngModel)]="selDay">
+        <option *ngFor="let o of optDay">
+            {{o.name}}
+        </option>
+    </select>
+
+    <select [(ngModel)]="selYear">
+        <option *ngFor="let o of optYear">
+            {{o.name}}
+        </option>
+    </select>
+</div>
+
+<br />
+<br />
+
+<div id="button" class="div">
+    <button mat-raised-button (click)="check()" type="button">Submit</button>
+</div>

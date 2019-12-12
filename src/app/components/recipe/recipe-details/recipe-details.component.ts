@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
-import { MainService } from 'src/app/services/main.service';
 import { Recipe } from 'src/app/models/Recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
 
@@ -15,11 +14,10 @@ export class RecipeDetailsComponent implements OnInit {
   dataSource: MatTableDataSource<Recipe>;
   recipe: Recipe[];
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private router: Router, private recipeService: RecipeService) { }
 
   ngOnInit() {
     this.recipeService.getRecipes().subscribe (data => this.recipe = data['results']);
     this.dataSource = new MatTableDataSource<Recipe>(this.recipe);
   }
-
 }
