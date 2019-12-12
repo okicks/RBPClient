@@ -25,6 +25,7 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RatingService } from './services/rating.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RegisterComponent } from './components/register/register.component';
 
   providers: [
     MainService,
-    AuthService
+    AuthService,
+    RatingService
   ],
   bootstrap: [AppComponent]
 })
