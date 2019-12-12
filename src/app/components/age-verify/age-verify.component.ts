@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-age-verify',
@@ -11,7 +12,6 @@ export class AgeVerifyComponent implements OnInit {
 
   output: string;
 
-  month: number;
   selDay: number;
   selYear: number;
 
@@ -189,7 +189,7 @@ export class AgeVerifyComponent implements OnInit {
   ];
 
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
     // for (var i = 1900; i <= 2020; i++) {
@@ -198,65 +198,87 @@ export class AgeVerifyComponent implements OnInit {
   }
 
   check() {
+    var numMonth;
+
     switch (this.selMonth) {
       case "Jan":
-        this.month = 1;
+        numMonth = 1;
         break;
 
       case "Feb":
-        this.month = 2;
+        numMonth = 2;
         break;
 
       case "Mar":
-        this.month = 3;
+        numMonth = 3;
         break;
 
       case "Apr":
-        this.month = 4;
+        numMonth = 4;
         break;
 
       case "May":
-        this.month = 5;
+        numMonth = 5;
         break;
 
       case "Jun":
-        this.month = 6;
+        numMonth = 6;
         break;
 
       case "Jul":
-        this.month = 7;
+        numMonth = 7;
         break;
 
       case "Aug":
-        this.month = 8;
+        numMonth = 8;
         break;
 
       case "Sep":
-        this.month = 9;
+        numMonth = 9;
         break;
 
       case "Oct":
-        this.month = 10;
+        numMonth = 10;
         break;
 
       case "Nov":
-        this.month = 11;
+        numMonth = 11;
         break;
 
       case "Dec":
-        this.month = 12;
+        numMonth = 12;
         break;
 
       default:
-        this.month = 0;
+        numMonth = 0;
         break;
     }
 
-    if (this.month > 0 && this.month <= 12 && this.selDay > 0 && this.selDay <= 31 && this.selYear > 0 && this.selYear < 2020) {
+    var now = new Date();
 
+    var nowYear = now.getFullYear();
+    var nowMonth = now.getMonth() + 1;
+    var nowDay = now.getDate();
+
+    console.log(new Date());
+    console.log(nowYear + " " + nowMonth + " " + nowDay);
+
+    if (numMonth > 0 && numMonth <= 12 && this.selDay > 0 && this.selDay <= 31 && this.selYear > 0 && this.selYear <= nowYear) {
+      if (this.selYear < (nowYear - 21)) {
+        this.router.navigateByUrl("/home");
+      }
+      else if (this.selYear == (nowYear - 21) && numMonth < nowMonth) {
+        this.router.navigateByUrl("/home");
+      }
+      else if (this.selYear == (nowYear - 21) && numMonth == nowMonth && this.selDay <= nowDay) {
+        this.router.navigateByUrl("/home");
+      }
+      else {
+        this.output = "You are not old enough";
+      }
     }
     else {
-
+      this.output = "Please enter a vaild date";
     }
   }
 
