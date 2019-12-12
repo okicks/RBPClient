@@ -17,11 +17,11 @@ import { AuthService } from 'src/app/services/auth.service';
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'home', component: MainComponent },
   {
     path: 'whiskey', canActivate: [AuthGuard], children: [
         { path: 'liquor/:Id', component: LiquorDetailsComponent },
         { path: 'recipe/:Id', component: RecipeDetailsComponent },
-        { path: 'home', component: MainComponent },
         { path: 'liquors', component: LiquorComponent },
         { path: 'recipes', component: RecipeComponent },
       ]
