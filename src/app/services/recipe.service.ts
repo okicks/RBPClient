@@ -1,33 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Recipe } from 'src/app/models/Recipe'
 
 const Api = 'https://localhost:44310';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MainService {
+export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
   /*
-    public get*NAME*() {
+    get*NAME*() {
       return this.http.get(`${Api}/*LOCATION*`);
     }
   */
-  
-  public getLiquor(Id: number) {
-    //URL needs updating
-    return this.http.get(`${Api}/*LOCATION*/${Id}`)
+
+  getRecipes() {
+    return this.http.get(`${Api}/Recipe/AllRecipes`, { headers: this.getHeaders() });
   }
 
-  public getRecipe(Id: number){
-    //URL needs updating
-    return this.http.get(`${Api}/*LOCATION*/${Id}`)
+  getNote(id) {
+    return this.http.get(`${Api}/recipe/${id}`);
   }
-}
-  /*
+
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
-  */
+}

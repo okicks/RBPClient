@@ -1,6 +1,5 @@
 body {
-    font-family: 'Alfa Slab One', cursive;
-    margin: 0;
+    font-family: 'Fredericka the Great', cursive;
   }
 
   .basic-container {
@@ -8,8 +7,4 @@ body {
   }
 
   html, body { height: 100%; 
-  }
-
-  body { margin: 0; 
-    font-family: 'Alfa Slab One', cursive;
   }

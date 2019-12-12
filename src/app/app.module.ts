@@ -26,6 +26,9 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { RegisterComponent } from './components/register/register.component';
     LiquorDetailsComponent,
     RecipeDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    RecipeCreateComponent,
+    RecipeDeleteComponent,
+    RecipeEditComponent
   ],
   
   imports: [

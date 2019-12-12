@@ -2,8 +2,13 @@
     flex: 1 1 auto;
 }
 
+.title {
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 32px;
+}
+
 .nav-btn {
     margin-right: 1em;
     border-radius: 1em;   
-    font-family: 'Open Sans Condensed', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
