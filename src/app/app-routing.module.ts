@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'home', component: MainComponent },
   { path: 'liquors', component: LiquorComponent },
   { path: 'recipes', component: RecipeComponent },
-  { path: 'allliquors', component: AllLiquorsComponent }
+  { path: 'allliquors', component: AllLiquorsComponent },
   {
     path: 'whiskey', canActivate: [AuthGuard], children: [
         { path: 'liquor/:Id', component: LiquorDetailsComponent },
