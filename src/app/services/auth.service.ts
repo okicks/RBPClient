@@ -23,7 +23,7 @@ export class AuthService {
   login(loginInfo) {
     const authString = 
     `grant_type=password&username=${encodeURI(loginInfo.email)}&password=${encodeURI(loginInfo.password)}`;
-    return this.http.get(`${Api}/Api/Account/token`, { headers: this.setHeaders() } ).subscribe((token: Token) => {
+    return this.http.post(`${Api}/token`, { headers: this.setHeaders() } ).subscribe((token: Token) => {
       this.userInfo = token;
       localStorage.setItem(`id_token`, token.access_token);
       this.isLoggedIn.next(true);
