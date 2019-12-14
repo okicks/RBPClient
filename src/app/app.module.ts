@@ -25,6 +25,8 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { LiquorService } from './services/liquor.service';
+import { AllLiquorsComponent } from './components/liquor/all-liquors/all-liquors.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { RegisterComponent } from './components/register/register.component';
     LiquorDetailsComponent,
     RecipeDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    AllLiquorsComponent
   ],
   
   imports: [
@@ -56,7 +59,8 @@ import { RegisterComponent } from './components/register/register.component';
 
   providers: [
     MainService,
-    AuthService
+    AuthService,
+    LiquorService
   ],
   bootstrap: [AppComponent]
 })

@@ -4,13 +4,13 @@ import { Liquor } from 'src/app/models/Liquor';
 import { MatTableDataSource } from '@angular/material';
 
 @Component({
-  selector: 'app-liquor-details',
-  templateUrl: './liquor-details.component.html',
-  styleUrls: ['./liquor-details.component.css']
+  selector: 'app-all-liquors',
+  templateUrl: './all-liquors.component.html',
+  styleUrls: ['./all-liquors.component.css']
 })
-export class LiquorDetailsComponent implements OnInit {
+export class AllLiquorsComponent implements OnInit {
 
-  columnNames = ['Name', 'Category', 'Percent', 'Origin', 'Rating'];
+  columnNames = ['Name', 'Rating'];
 
   dataSource: MatTableDataSource<Liquor>;
 
