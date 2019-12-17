@@ -1,29 +1,16 @@
-<p>Recipe Detail</p>
-<hr />
+<h1>Recipe Details</h1>
+<br />
 
-<div>
-    <mat-table #table [dataSource] = "dataSource">
-        <mat-header-row *matHeaderRowDef = "columnNames"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: columnNames"></mat-row>
+<div *ngIf="note">
+    <div>
+        <label>Recipe Name:</label>
+        <span>{{recipe.Name}}</span>
+    </div>
+    <div>
+        <label>Recipe Description:</label>
+        <span>{{recipe.Decsription}}</span>
+    </div>
 
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-            <mat-cell *matCellDef="let recipe;">{{recipe.name}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef = "description">
-            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-            <mat-cell *matCellDef="let recipe">{{recipe.description}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef = "isStarred">
-            <mat-header-cell *matHeaderCellDef>Favorite?</mat-header-cell>
-            <mat-cell *matCellDef="let recipe">{{recipe.isStarred}}</mat-cell>
-        </ng-container>
-
-        <ng-container matColumnDef = "recipeRating">
-            <mat-header-cell *matHeaderCellDef>Recipe Rating</mat-header-cell>
-            <mat-cell *matCellDef="let recipe">{{recipe.recipeRating}}</mat-cell>
-        </ng-container>
-    </mat-table>
+    <button mat-raised-button color="accent">Edit</button>
 </div>
+<button mat-raised-button color="primary" routerLink="/notes">Back to Recipes</button>

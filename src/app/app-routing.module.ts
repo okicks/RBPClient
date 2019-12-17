@@ -13,17 +13,23 @@ import { AuthGuard } from './guards/auth.guard';
 import { MainService } from './services/main.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+//import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
+//import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   {
     path: 'whiskey', canActivate: [AuthGuard], children: [
-        { path: 'liquor/:Id', component: LiquorDetailsComponent },
-        { path: 'recipe/:Id', component: RecipeDetailsComponent },
         { path: 'home', component: MainComponent },
         { path: 'liquors', component: LiquorComponent },
+        { path: 'liquor/:id', component: LiquorDetailsComponent },
         { path: 'recipes', component: RecipeComponent },
+        { path: 'recipe/:id', component: RecipeDetailsComponent },
+        { path: 'recipe/create', component: RecipeCreateComponent},
+        //{ path: 'recipe/edit/:id', component: RecipeEditComponent},
+        //{ path: 'recipe/delete/:id', component: RecipeDeleteComponent}
       ]
     },
   { path: '**', component: AgeVerifyComponent }
