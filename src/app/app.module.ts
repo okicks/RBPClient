@@ -26,6 +26,7 @@ import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { RatingService } from './services/rating.service';
+import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { RatingService } from './services/rating.service';
     LiquorDetailsComponent,
     RecipeDetailsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LiquorRatingComponent
   ],
   
   imports: [

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const Api = 'https://localhost:44310';
 @Injectable({
@@ -6,9 +7,13 @@ const Api = 'https://localhost:44310';
 })
 export class RatingService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
-  getRatings() {
+  getLiquorRatings() {
+    return this.http.get(`${Api}/Rating/Liquor`, {headers: this.getHeaders() });
+  }
 
+  private getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }
