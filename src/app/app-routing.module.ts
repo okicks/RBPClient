@@ -14,18 +14,26 @@ import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'liquor/:Id', component: LiquorDetailsComponent },
-  { path: 'recipe/:Id', component: RecipeDetailsComponent },
   { path: 'home', component: MainComponent },
   { path: 'liquors', component: LiquorComponent },
   { path: 'recipes', component: RecipeComponent },
   {path: 'rating', component: LiquorRatingComponent},
   { path: '**', component: AgeVerifyComponent }
+
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes), 
     HttpClientModule],
+
+  providers: [
+      AuthService,
+      MainService,
+      RecipeService,
+      AuthGuard
+    ],
+
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

@@ -9,6 +9,7 @@ import {
   MatInputModule,
   MatTableModule
 } from '@angular/material';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -54,7 +55,8 @@ import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.
     MatTableModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule    
   ],
 
   providers: [
