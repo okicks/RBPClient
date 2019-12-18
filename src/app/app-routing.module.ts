@@ -10,6 +10,10 @@ import { AgeVerifyComponent } from './components/age-verify/age-verify.component
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
+import { AuthService } from './services/auth.service';
+import { MainService } from './services/main.service';
+import { RecipeService } from './services/recipe.service';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
