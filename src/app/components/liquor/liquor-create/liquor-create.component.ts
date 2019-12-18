@@ -13,11 +13,17 @@ export class LiquorCreateComponent implements OnInit {
   liquorForm: FormGroup;
 
   constructor(private form: FormBuilder, private liquorService: LiquorService, private router: Router) {
-    //this.createForm();
+    this.createForm();
    }
 
   ngOnInit() {
+  }
 
+  createForm(){
+    this.liquorForm = this.form.group({
+      Name: new FormControl,
+      
+    })
   }
 
 }
