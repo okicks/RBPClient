@@ -25,12 +25,12 @@ export class RecipeService {
     return this.http.get(`${Api}/recipe/${id}`, { headers: this.getHeaders() });
   }
 
-  createRecipe() {
-    return this.http.get(`${Api}/recipe/create`, { headers: this.getHeaders() });
+  createRecipe(recipe : Recipe) {
+    return this.http.post(`${Api}/api/Recipe/Create`, recipe, { headers: this.getHeaders() });
   }
 
   editRecipe(recipe : Recipe) {
-    return this.http.put(`${Api}recipe/edit`, recipe, { headers: this.getHeaders() })
+    return this.http.put(`${Api}/recipe/edit`, recipe, { headers: this.getHeaders() })
   }
 
   deleteRecipe(id: number) {
