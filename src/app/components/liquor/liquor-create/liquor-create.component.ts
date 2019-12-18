@@ -22,8 +22,16 @@ export class LiquorCreateComponent implements OnInit {
   createForm(){
     this.liquorForm = this.form.group({
       Name: new FormControl,
-      
-    })
+      Category: new FormControl,
+      PercentAlcohol: new FormControl,
+      Origin: new FormControl
+    });
+  }
+
+  onSubmit() {
+    this.liquorService.createLiquor(this.liquorForm.value).subscribe(() => {
+      this.router.navigate(['/liquors'])
+    });
   }
 
 }

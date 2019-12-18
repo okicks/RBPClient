@@ -16,6 +16,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
 import { from } from 'rxjs';
+import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-create.component';
 //import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 //import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 
@@ -26,8 +27,7 @@ const routes: Routes = [
   { path: 'liquors', component: LiquorComponent },
   //{ path: 'allliquors', component: AllLiquorsComponent },
   { path: 'liquor/:Id', component: LiquorDetailsComponent },
-  { path: 'liquor/:id', component: LiquorDetailsComponent },
-  { path: 'liquors', component: LiquorComponent },
+  { path: 'liquors/create', component: LiquorCreateComponent},
   {
     path: 'recipe', canActivate: [AuthGuard], children: [
         { path: '', component: RecipeComponent},

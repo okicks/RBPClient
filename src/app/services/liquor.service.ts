@@ -16,7 +16,7 @@ export class LiquorService {
   }
 
   getLiquor(id: number) {
-    return this.http.get(`${Api}/liquor/${id}`, { headers: this.getHeaders() });
+    return this.http.get(`${Api}/liquors/${id}`, { headers: this.getHeaders() });
   }
 
   createLiquor(liquor : Liquor) {
@@ -28,7 +28,7 @@ export class LiquorService {
   }
 
   deleteLiquor(id: number) {
-    return this.http.delete(`${Api}/Liquros/Delete/${id}`, { headers: this.getHeaders() })
+    return this.http.delete(`${Api}/Liquors/Delete/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {

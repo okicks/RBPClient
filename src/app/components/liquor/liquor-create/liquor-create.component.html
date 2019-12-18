@@ -1,1 +1,30 @@
-<p>liquor-create works!</p>
+<p>Add Liquor</p>
+<br />
+
+<form (ngSubmit)="onSubmit()" [formGroup]="liquorForm">
+    <div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Liquor Name" formControlName="Name" type="Name" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Category" formControlName="Category" type="Category" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Percent Alcohol" formControlName="PercentAlcohol" type="PercentAlcohol" required />
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="Origin" formControlName="Origin" type="Origin" required />
+            </mat-form-field>
+        </div>
+    </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Add a Liquor</button>
+</form>
+
+<a mat-button routerLink="/liquors">Back to List</a>
