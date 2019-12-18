@@ -15,7 +15,7 @@ import { MainService } from './services/main.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
-//import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 //import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 
 const routes: Routes = [
@@ -32,7 +32,7 @@ const routes: Routes = [
         { path: 'allRecipes', component: RecipeComponent},
         { path: 'detail/:id', component: RecipeDetailsComponent },
         { path: 'create', component: RecipeCreateComponent},
-        //{ path: 'edit/:id', component: RecipeEditComponent},
+        { path: 'edit/:id', component: RecipeEditComponent},
         //{ path: 'delete/:id', component: RecipeDeleteComponent}
       ]
     },

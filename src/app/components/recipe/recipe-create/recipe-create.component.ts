@@ -22,7 +22,8 @@ export class RecipeCreateComponent implements OnInit {
   createForm() {
     this.recipeForm = this.form.group({
       Name: new FormControl,
-      Description: new FormControl
+      Description: new FormControl,
+      AverageRating: new FormControl
     });
   }
 

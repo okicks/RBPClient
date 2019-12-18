@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, throwToolbarMixedModesError } from '@angular/material';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Recipe } from 'src/app/models/Recipe';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -12,7 +12,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 
 export class RecipeDetailsComponent implements OnInit {
 
-  columnNames = ['Id', 'Name', 'Description', 'Rating'];
+  columnNames = ['Name', 'Description'];
   dataSource: MatTableDataSource<Recipe>;
 
   recipe: Recipe;
@@ -20,17 +20,11 @@ export class RecipeDetailsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router, private recipeService: RecipeService) { }
 
   ngOnInit() {
-    this.recipeService.getRecipes().subscribe((recipes: Recipe[])=>{
-      this.dataSource = new MatTableDataSource<Recipe>(recipes);
-    });
-    var url = this.router.url;
-    this.pullData(Number.parseInt(url.substring(url.lastIndexOf("/") + 1, url.length)));
-  }
-
-  private pullData(Id: number){
-    this.recipe
-    this.recipeService.getRecipe(Id).subscribe((recipe: Recipe) => {
-      this.recipe = recipe;
+    this.activatedRoute.paramMap.subscribe(routeData => {
+      this.recipeService.getRecipe(routeData.get('id')).subscribe((recipe: Recipe) => {
+        this.recipe = recipe;
+      });
     });
   }
+  
 }

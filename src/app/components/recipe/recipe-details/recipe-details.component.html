@@ -1,24 +1,24 @@
 <h1>Recipe Details</h1>
-<br />
+<button mat-raised-button color="primary" routerLink="/recipe/edit/:id">Edit</button>
 
-<div *ngIf="recipe">
-    <div hidden>
-        <label>Recipe ID</label>
-        <span>{{recipe.Id}}</span>
-    </div>
+
+<div>
+    <br/>
     <div>
         <label>Recipe Name:</label>
         <span>{{recipe.Name}}</span>
     </div>
+    <br/>
     <div>
         <label>Recipe Description:</label>
-        <span>{{recipe.Decsription}}</span>
+        <span>{{recipe.Description}}</span>
     </div>
+    <br/>
     <div>
-        <label>Average Rating:</label>
+        <label>Recipe Rating:</label>
         <span>{{recipe.AverageRating}}</span>
     </div>
-
-    <button mat-raised-button color="accent" routerLink="/recipe/Edit/:id">Edit</button>
 </div>
+<br/>
+
 <button mat-raised-button color="primary" routerLink="/recipe/allRecipes">Back to Recipes</button>
