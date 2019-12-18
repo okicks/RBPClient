@@ -17,11 +17,7 @@ export class LiquorCreateComponent implements OnInit {
    }
 
   ngOnInit() {
-    //createForm(){
-     // this.liquorForm = this.form.group({
-        Name: new FormControl,
-      })
-    }
+
   }
 
 }
