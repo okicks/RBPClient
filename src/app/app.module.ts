@@ -30,6 +30,10 @@ import { RatingService } from './services/rating.service';
 import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
 import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-create.component';
 import { LiquorService } from './services/liquor.service';
+import { AllLiquorsComponent } from './components/liquor/all-liquors/all-liquors.component';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+//import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
+//import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { LiquorService } from './services/liquor.service';
     LoginComponent,
     RegisterComponent,
     LiquorRatingComponent,
-    LiquorCreateComponent
+    LiquorCreateComponent,
+    AllLiquorsComponent,
+    RecipeCreateComponent,
+    //RecipeDeleteComponent,
+    //RecipeEditComponent
   ],
   
   imports: [

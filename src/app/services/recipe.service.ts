@@ -18,11 +18,23 @@ export class RecipeService {
   */
 
   getRecipes() {
-    return this.http.get(`${Api}/Recipe/AllRecipes`, { headers: this.getHeaders() });
+    return this.http.get(`${Api}/Recipe/AllRecipes`);
   }
 
-  getNote(id) {
-    return this.http.get(`${Api}/recipe/${id}`);
+  getRecipe(id: number) {
+    return this.http.get(`${Api}/recipe/${id}`, { headers: this.getHeaders() });
+  }
+
+  createRecipe(recipe : Recipe) {
+    return this.http.post(`${Api}/api/Recipe/Create`, recipe, { headers: this.getHeaders() });
+  }
+
+  editRecipe(recipe : Recipe) {
+    return this.http.put(`${Api}/recipe/edit`, recipe, { headers: this.getHeaders() })
+  }
+
+  deleteRecipe(id: number) {
+    return this.http.delete(`${Api}/recipe/delete/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {

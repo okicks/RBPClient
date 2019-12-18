@@ -10,18 +10,33 @@ import { AgeVerifyComponent } from './components/age-verify/age-verify.component
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
-import { AuthService } from './services/auth.service';
-import { MainService } from './services/main.service';
-import { RecipeService } from './services/recipe.service';
 import { AuthGuard } from './guards/auth.guard';
+import { MainService } from './services/main.service';
+import { RecipeService } from 'src/app/services/recipe.service';
+import { AuthService } from 'src/app/services/auth.service';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { from } from 'rxjs';
+//import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
+//import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: MainComponent },
   { path: 'liquors', component: LiquorComponent },
-  { path: 'recipes', component: RecipeComponent },
-  {path: 'rating', component: LiquorRatingComponent},
+  //{ path: 'allliquors', component: AllLiquorsComponent },
+  { path: 'liquor/:Id', component: LiquorDetailsComponent },
+  { path: 'liquor/:id', component: LiquorDetailsComponent },
+  { path: 'liquors', component: LiquorComponent },
+  {
+    path: 'recipe', canActivate: [AuthGuard], children: [
+        { path: '', component: RecipeComponent},
+        { path: 'detail/:id', component: RecipeDetailsComponent },
+        { path: 'create', component: RecipeCreateComponent},
+        //{ path: 'edit/:id', component: RecipeEditComponent},
+        //{ path: 'delete/:id', component: RecipeDeleteComponent}
+      ]
+    },
   { path: '**', component: AgeVerifyComponent }
 
 ];
