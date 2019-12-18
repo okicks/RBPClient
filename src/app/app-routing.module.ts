@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'liquors', component: LiquorComponent },
   {
     path: 'recipe', canActivate: [AuthGuard], children: [
-        { path: '', component: RecipeComponent},
+        { path: 'allRecipes', component: RecipeComponent},
         { path: 'detail/:id', component: RecipeDetailsComponent },
         { path: 'create', component: RecipeCreateComponent},
         //{ path: 'edit/:id', component: RecipeEditComponent},

@@ -11,4 +11,11 @@ Works like a foreach loop
 Needs a populated list in the .ts file called "recipes"
 -->
 <h1>Recipes</h1>
+
+<ul class="recipe">
+    <li *ngFor="let recipe of recipes" (click)="goToDetailPage(recipe)">
+        <h3>{{recipe.Name}}</h3>
+    </li>
+</ul>
+
 <a mat-raised-button color="primary" routerLink="/recipe/create">Create a Recipe</a>

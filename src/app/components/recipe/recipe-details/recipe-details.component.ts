@@ -12,7 +12,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 
 export class RecipeDetailsComponent implements OnInit {
 
-  columnNames = ['Name', 'Description', 'Rating'];
+  columnNames = ['Id', 'Name', 'Description', 'Rating'];
   dataSource: MatTableDataSource<Recipe>;
 
   recipe: Recipe;

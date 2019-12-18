@@ -1,7 +1,11 @@
 <h1>Recipe Details</h1>
 <br />
 
-<div *ngIf="note">
+<div *ngIf="recipe">
+    <div hidden>
+        <label>Recipe ID</label>
+        <span>{{recipe.Id}}</span>
+    </div>
     <div>
         <label>Recipe Name:</label>
         <span>{{recipe.Name}}</span>
@@ -10,7 +14,11 @@
         <label>Recipe Description:</label>
         <span>{{recipe.Decsription}}</span>
     </div>
+    <div>
+        <label>Average Rating:</label>
+        <span>{{recipe.AverageRating}}</span>
+    </div>
 
-    <button mat-raised-button color="accent">Edit</button>
+    <button mat-raised-button color="accent" routerLink="/recipe/Edit/:id">Edit</button>
 </div>
-<button mat-raised-button color="primary" routerLink="/notes">Back to Recipes</button>
+<button mat-raised-button color="primary" routerLink="/recipe/allRecipes">Back to Recipes</button>

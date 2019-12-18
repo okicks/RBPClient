@@ -18,7 +18,7 @@ export class RecipeService {
   */
 
   getRecipes() {
-    return this.http.get(`${Api}/Recipe/AllRecipes`);
+    return this.http.get(`${Api}/recipe/allRecipes`);
   }
 
   getRecipe(id: number) {
@@ -30,11 +30,11 @@ export class RecipeService {
   }
 
   editRecipe(recipe : Recipe) {
-    return this.http.put(`${Api}/recipe/edit`, recipe, { headers: this.getHeaders() })
+    return this.http.put(`${Api}api/recipe/edit`, recipe, { headers: this.getHeaders() })
   }
 
   deleteRecipe(id: number) {
-    return this.http.delete(`${Api}/recipe/delete/${id}`, { headers: this.getHeaders() })
+    return this.http.delete(`${Api}api/recipe/delete/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {
