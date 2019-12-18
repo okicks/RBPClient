@@ -23,19 +23,17 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: MainComponent },
   { path: 'liquors', component: LiquorComponent },
-  { path: 'recipes', component: RecipeComponent },
   { path: 'allliquors', component: AllLiquorsComponent },
+  { path: 'liquor/:Id', component: LiquorDetailsComponent },
+  { path: 'liquor/:id', component: LiquorDetailsComponent },
+  { path: 'liquors', component: LiquorComponent },
   {
-    path: 'whiskey', canActivate: [AuthGuard], children: [
-        { path: 'liquor/:Id', component: LiquorDetailsComponent },
-        { path: 'recipe/:Id', component: RecipeDetailsComponent },
-        { path: 'liquors', component: LiquorComponent },
-        { path: 'liquor/:id', component: LiquorDetailsComponent },
-        { path: 'recipes', component: RecipeComponent },
-        { path: 'recipe/:id', component: RecipeDetailsComponent },
-        { path: 'recipe/create', component: RecipeCreateComponent},
-        //{ path: 'recipe/edit/:id', component: RecipeEditComponent},
-        //{ path: 'recipe/delete/:id', component: RecipeDeleteComponent}
+    path: 'recipe', canActivate: [AuthGuard], children: [
+        { path: '', component: RecipeComponent},
+        { path: 'detail/:id', component: RecipeDetailsComponent },
+        { path: 'create', component: RecipeCreateComponent},
+        //{ path: 'edit/:id', component: RecipeEditComponent},
+        //{ path: 'delete/:id', component: RecipeDeleteComponent}
       ]
     },
   { path: '**', component: AgeVerifyComponent }
