@@ -29,7 +29,7 @@ export class RecipeCreateComponent implements OnInit {
 
   onSubmit() {
     this.recipeService.createRecipe(this.recipeForm.value).subscribe(() => {
-      this.router.navigate(['/recipe'])
+      this.router.navigate(['/recipe/allRecipes'])
     });
   }
 

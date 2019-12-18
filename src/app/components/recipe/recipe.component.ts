@@ -24,18 +24,18 @@ export class RecipeComponent implements OnInit {
     this.recipeService.getRecipes().subscribe((recipes: Recipe[])=>{
       this.dataSource = new MatTableDataSource<Recipe>(recipes);
     });
-    var url = this.router.url;
-    this.pullData(Number.parseInt(url.substring(url.lastIndexOf("/") + 1, url.length)));
+   // var url = this.router.url;
+    //this.pullData(Number.parseInt(url.substring(url.lastIndexOf("/") + 1, url.length)));
   }
                
   goToDetailPage(clickedRecipe: Recipe) {
     this.router.navigate(['recipe/detail', clickedRecipe.Id]);
   }
 
-  private pullData(Id: number){
-    this.recipe
-    this.recipeService.getRecipe(Id).subscribe((recipe: Recipe) => {
-      this.recipe = recipe;
-    });
-  }
+///  private pullData(Id: number){
+ //   this.recipe
+  //  this.recipeService.getRecipe(Id).subscribe((recipe: Recipe) => {
+  //    this.recipe = recipe;
+  //  });
+ // }
 }
