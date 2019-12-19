@@ -9,7 +9,7 @@ import { RecipeComponent } from './components/recipe/recipe.component';
 import { AgeVerifyComponent } from './components/age-verify/age-verify.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
-import { AllLiquorsComponent } from './components/liquor/all-liquors/all-liquors.component';
+import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
 import { AuthGuard } from './guards/auth.guard';
 import { MainService } from './services/main.service';
 import { RecipeService } from 'src/app/services/recipe.service';
@@ -17,16 +17,17 @@ import { AuthService } from 'src/app/services/auth.service';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
 import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
+import { from } from 'rxjs';
+import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-create.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: MainComponent },
   { path: 'liquors', component: LiquorComponent },
-  { path: 'allliquors', component: AllLiquorsComponent },
+  //{ path: 'allliquors', component: AllLiquorsComponent },
   { path: 'liquor/:Id', component: LiquorDetailsComponent },
-  { path: 'liquor/:id', component: LiquorDetailsComponent },
-  { path: 'liquors', component: LiquorComponent },
+  { path: 'liquors/create', component: LiquorCreateComponent},
   {
     path: 'recipe', canActivate: [AuthGuard], children: [
         { path: 'allRecipes', component: RecipeComponent},

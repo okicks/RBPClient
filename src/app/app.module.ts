@@ -26,6 +26,9 @@ import { RecipeDetailsComponent } from './components/recipe/recipe-details/recip
 import { AuthService } from './services/auth.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RatingService } from './services/rating.service';
+import { LiquorRatingComponent } from './components/liquor-rating/liquor-rating.component';
+import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-create.component';
 import { LiquorService } from './services/liquor.service';
 import { AllLiquorsComponent } from './components/liquor/all-liquors/all-liquors.component';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
@@ -46,6 +49,8 @@ import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-
     RecipeDetailsComponent,
     LoginComponent,
     RegisterComponent,
+    LiquorRatingComponent,
+    LiquorCreateComponent,
     AllLiquorsComponent,
     RecipeCreateComponent,
     RecipeEditComponent,
@@ -72,6 +77,7 @@ import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-
   providers: [
     MainService,
     AuthService,
+    RatingService,
     LiquorService
   ],
   bootstrap: [AppComponent]
