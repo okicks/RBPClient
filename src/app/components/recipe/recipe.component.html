@@ -11,4 +11,45 @@ Works like a foreach loop
 Needs a populated list in the .ts file called "recipes"
 -->
 <h1>Recipes</h1>
+
 <a mat-raised-button color="primary" routerLink="/recipe/create">Create a Recipe</a>
+
+<!--<ul class="recipe">
+    <li *ngFor="let recipe of recipes" (click)="goToDetailPage(recipe)">
+        <h3>{{recipe.Name}}, {{recipe.AverageRating}}</h3>
+    </li>
+</ul>
+-->
+
+<div>
+    <mat-table #table [dataSource]="dataSource">
+        <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+        <mat-cell *matCellDef="let recipe;">
+            <i class="material-icons" routerLink="/recipe/edit/{{recipe.Id}}">edit</i>
+            <i class="material-icons" routerLink="/recipe/delete/{{recipe.Id}}">delete</i>
+        </mat-cell>
+
+        <ng-container matColumnDef="Id">
+            <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+            <mat-cell *matCellDef="let recipe;">{{recipe.Id}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let recipe;" routerLink="/recipe/detail/{{recipe.Id}}">{{recipe.Name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Description">
+            <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+            <mat-cell *matCellDef="let recipe;">{{recipe.Description}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Rating">
+            <mat-header-cell *matHeaderCellDef>Average Rating</mat-header-cell>
+            <mat-cell *matCellDef="let recipe;">{{recipe.AverageRating}}</mat-cell>
+        </ng-container>
+
+    </mat-table>
+</div>

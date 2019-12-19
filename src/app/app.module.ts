@@ -32,6 +32,8 @@ import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-
 import { LiquorService } from './services/liquor.service';
 import { AllLiquorsComponent } from './components/liquor/all-liquors/all-liquors.component';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
+import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 //import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 //import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
 
@@ -51,6 +53,8 @@ import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-
     LiquorCreateComponent,
     AllLiquorsComponent,
     RecipeCreateComponent,
+    RecipeEditComponent,
+    RecipeDeleteComponent,
     //RecipeDeleteComponent,
     //RecipeEditComponent
   ],

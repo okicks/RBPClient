@@ -1,6 +1,6 @@
-<h1>Recipe Details</h1>
-<button mat-raised-button color="primary" routerLink="/recipe/edit/:id">Edit</button>
-
+<h1>Delete Recipe</h1>
+<h4>Are you sure you want to delete this recipe?</h4>
+<br/>
 
 <div>
     <br/>
@@ -18,6 +18,8 @@
         <label>Recipe Rating:</label>
         <span>{{recipe.AverageRating}}</span>
     </div>
+
+    <button mat-raised-button color="warn" (click)="onDelete()">Yes, Delete</button>
 </div>
 <br/>
 

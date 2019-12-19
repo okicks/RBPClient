@@ -28,7 +28,7 @@ export class AuthService {
       localStorage.setItem(`id_token`, token.access_token);
       this.isLoggedIn.next(true);
       localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
     });
   }
 

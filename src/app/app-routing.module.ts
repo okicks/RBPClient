@@ -15,10 +15,10 @@ import { MainService } from './services/main.service';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
+import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 import { from } from 'rxjs';
 import { LiquorCreateComponent } from './components/liquor/liquor-create/liquor-create.component';
-//import { RecipeEditComponent } from './components/recipe/recipe-edit/recipe-edit.component';
-//import { RecipeDeleteComponent } from './components/recipe/recipe-delete/recipe-delete.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
@@ -30,11 +30,11 @@ const routes: Routes = [
   { path: 'liquors/create', component: LiquorCreateComponent},
   {
     path: 'recipe', canActivate: [AuthGuard], children: [
-        { path: '', component: RecipeComponent},
+        { path: 'allRecipes', component: RecipeComponent},
         { path: 'detail/:id', component: RecipeDetailsComponent },
         { path: 'create', component: RecipeCreateComponent},
-        //{ path: 'edit/:id', component: RecipeEditComponent},
-        //{ path: 'delete/:id', component: RecipeDeleteComponent}
+        { path: 'edit/:id', component: RecipeEditComponent},
+        { path: 'delete/:id', component: RecipeDeleteComponent}
       ]
     },
   { path: '**', component: AgeVerifyComponent }

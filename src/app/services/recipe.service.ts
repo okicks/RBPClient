@@ -11,18 +11,12 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  /*
-    get*NAME*() {
-      return this.http.get(`${Api}/*LOCATION*`);
-    }
-  */
-
   getRecipes() {
-    return this.http.get(`${Api}/Recipe/AllRecipes`);
+    return this.http.get(`${Api}/api/Recipe/AllRecipes`, { headers: this.getHeaders() });
   }
 
-  getRecipe(id: number) {
-    return this.http.get(`${Api}/recipe/${id}`, { headers: this.getHeaders() });
+  getRecipe(id) {
+    return this.http.get(`${Api}/api/Recipe/${id}`, { headers: this.getHeaders() });
   }
 
   createRecipe(recipe : Recipe) {
@@ -30,11 +24,11 @@ export class RecipeService {
   }
 
   editRecipe(recipe : Recipe) {
-    return this.http.put(`${Api}/recipe/edit`, recipe, { headers: this.getHeaders() })
+    return this.http.put(`${Api}/api/Recipe/Edit`, recipe, { headers: this.getHeaders() })
   }
 
   deleteRecipe(id: number) {
-    return this.http.delete(`${Api}/recipe/delete/${id}`, { headers: this.getHeaders() })
+    return this.http.delete(`${Api}/api/Recipe/Delete/${id}`, { headers: this.getHeaders() })
   }
 
   private getHeaders() {

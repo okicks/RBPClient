@@ -1,7 +1,7 @@
-<p>Create Recipe</p>
+<p>Edit Recipe</p>
 <br />
 
-<form (ngSubmit)="onSubmit()" [formGroup]="recipeForm">
+<form (ngSubmit)="onSubmit()" [formGroup]="editForm">
     <div>
         <div>
             <mat-form-field>
@@ -19,8 +19,7 @@
             </mat-form-field>
         </div>
     </div>
-    <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Recipe</button>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Submit Edit</button>
 </form>
 
 <a mat-button routerLink="/recipe/allRecipes">Back to List</a>
-
